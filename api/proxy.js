@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 export default async function handler(req, res) {
   const targetUrl = 'http://developement.eba-nmagbysq.us-east-1.elasticbeanstalk.com' + req.url.replace('/api/proxy', '');
 
