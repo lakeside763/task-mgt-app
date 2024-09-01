@@ -5,7 +5,7 @@ import { CreateTaskInterface, GroupInterface, ListInterface } from "./interface"
 const baseURL = "https://task-mgt-app-sage.vercel.app/api/proxy";
 
 export const GetTasks = async () => {
-  const response = await fetch(`${baseURL}/tasks`);
+  const response = await fetch(`${baseURL}/getTasks`);
   if (!response.ok) {
     throw new Error('Network response was not ok')
   }

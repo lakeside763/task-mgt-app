@@ -1,7 +1,6 @@
 // api/test.js
 
 export default function handler(req, res) {
-  // Example static data
   const staticData = {
     success: true,
     message: "This is a test response",
@@ -11,7 +10,5 @@ export default function handler(req, res) {
       { id: 3, task: "Go for a run" }
     ]
   };
-
-  // Return the static data as JSON
   res.status(200).json(staticData);
 }
