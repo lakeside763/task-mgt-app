@@ -1,0 +1,16 @@
+{
+  "builds": [
+    {
+      "src": "src/**/*",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "api/proxy.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/proxy", "dest": "/api/proxy.js" }
+  ]
+}
