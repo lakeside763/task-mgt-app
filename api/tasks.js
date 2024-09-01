@@ -1,9 +1,8 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
 import fetch from 'node-fetch';
 
 const BASE_URL="http://developement.eba-nmagbysq.us-east-1.elasticbeanstalk.com"
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   try {
     const response = await fetch(`${BASE_URL}/tasks`);
     if (!response.ok) {
