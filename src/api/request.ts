@@ -2,7 +2,7 @@ import { CreateTaskInterface, GroupInterface, ListInterface } from "./interface"
 
 // const baseURL = "http://localhost:5134";
 // const baseURL = "http://developement.eba-nmagbysq.us-east-1.elasticbeanstalk.com";
-const baseURL = "../../api/proxy";
+const baseURL = "/api/proxy";
 
 export const GetTasks = async () => {
   const response = await fetch(`${baseURL}/tasks`);
