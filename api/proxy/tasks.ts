@@ -1,10 +1,11 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 
+const BASE_URL="http://developement.eba-nmagbysq.us-east-1.elasticbeanstalk.com"
 export default async function handleTasks(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'GET') {
     // Handle GET request - Fetch Tasks
     try {
-      const response = await fetch(`${process.env.BASE_URL}/tasks`);
+      const response = await fetch(`${BASE_URL}/tasks`);
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
