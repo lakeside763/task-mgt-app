@@ -5,12 +5,24 @@ import { CreateTaskInterface, GroupInterface, ListInterface } from "./interface"
 const baseURL = "/api/proxy";
 
 export const GetTasks = async () => {
-  const response = await fetch(`${baseURL}/tasks`);
-  if (!response.ok) {
-    throw new Error('Network response was not ok')
+  try {
+    const response = await fetch(`${baseURL}/tasks`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Failed to fetch tasks:', error);
+    throw error;
   }
-  return response.json();
-}
+};
 
 export const CreateGroup = async (groupData: Partial<GroupInterface>) => {
   const response = await fetch(`${baseURL}/groups`, {

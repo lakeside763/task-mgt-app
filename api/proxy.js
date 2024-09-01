@@ -6,13 +6,17 @@ export default async function handler(req, res) {
   try {
     const response = await fetch(targetUrl, {
       method: req.method,
-      headers: req.headers,
+      headers: {
+        ...req.headers,
+        host: new URL(targetUrl).host, // ensure the correct host header is sent
+      },
       body: req.method !== 'GET' && req.method !== 'HEAD' ? req.body : undefined,
     });
 
     const data = await response.text();
     res.status(response.status).send(data);
   } catch (error) {
+    console.error('Error connecting to the target API:', error);
     res.status(500).json({ error: 'Failed to connect to the target API' });
   }
 }
