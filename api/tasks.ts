@@ -1,7 +1,6 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
-
 const BASE_URL="http://developement.eba-nmagbysq.us-east-1.elasticbeanstalk.com"
-export default async function handleTasks(req: VercelRequest, res: VercelResponse) {
+
+export default async function handleTasks(req, res) {
   if (req.method === 'GET') {
     // Handle GET request - Fetch Tasks
     try {
