@@ -10,7 +10,7 @@ interface DropdownFieldProps {
 }
 
 const DropdownField: FC<DropdownFieldProps> = ({ options, onOptionChange }) => {
-  const [selectedOption, setSelectedOption] = useState(options[0])
+  const [_, setSelectedOption] = useState(options[0])
 
   const handleOptionChange = (event: any) => {
     const selectedValue = event.target.value;
