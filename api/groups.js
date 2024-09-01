@@ -1,13 +1,13 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+import fetch from 'node-fetch';
 
-export default async function handleLists(req: VercelRequest, res: VercelResponse) {
+export default async function handleGroups(req, res) {
   if (req.method === 'GET') {
-    // Handle GET request - Fetch Lists
+    // Handle GET request - Fetch Groups
     try {
-      const response = await fetch(`${process.env.BASE_URL}/lists`);
+      const response = await fetch(`${process.env.BASE_URL}/groups`);
 
       if (!response.ok) {
-        throw new Error('Failed to fetch lists');
+        throw new Error('Failed to fetch groups');
       }
 
       const data = await response.json();
@@ -16,20 +16,20 @@ export default async function handleLists(req: VercelRequest, res: VercelRespons
       res.status(500).json({ message: error.message });
     }
   } else if (req.method === 'POST') {
-    // Handle POST request - Create List
+    // Handle POST request - Create Group
     try {
-      const listData = req.body;
+      const groupData = req.body;
 
-      const response = await fetch(`${process.env.BASE_URL}/lists`, {
+      const response = await fetch(`${process.env.BASE_URL}/groups`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(listData),
+        body: JSON.stringify(groupData),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to create list');
+        throw new Error('Failed to create group');
       }
 
       const data = await response.json();
