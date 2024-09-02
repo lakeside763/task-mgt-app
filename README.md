@@ -25,7 +25,9 @@ yarn dev
 
 #### Things achieved
 - Interactive UI with mobile responsive
+- Organised React Components
 - Modal Implementation for  Group, List and Tasks Management
 - Date and Time integration
 - Clean and code maintainability
+- React-query for easy data api request management
 - etc.
