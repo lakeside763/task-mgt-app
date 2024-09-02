@@ -28,6 +28,6 @@ yarn dev
 - Organised React Components
 - Modal Implementation for  Group, List and Tasks Management
 - Date and Time integration
-- Clean and code maintainability
+- Clean code and maintainability
 - React-query for easy data api request management
 - etc.
